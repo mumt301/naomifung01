@@ -4,27 +4,28 @@ QUESTIONNAIRE!
 The following questionnaire seeks to understand your previous knowledge about some of the concepts that we will learn in class during the coming term.
 
 1. Do you know any programming languages? If you do, which ones?
-
+A little bit of Python.
 2. What is your primary computer operating system (OS)?
-
+I have a Mac.
 3. Do you own a smartphone, tablet, or mobile device? What is your favourite OS for mobile devices?
-
+Yes, I have an iPhone and an iPad. I use my phone the most frequently.
 4. Do you use any social networking services? If you do, which ones? Why?
-
+Yes, I have Instagram, Snapchat, and Facebook. I have them for entertainment and to kill time
 5. Expand the following acronyms and do research about their meaning. You may look them up if you don't know:
 
-    HTTP
-    REST    
-    API
+    HTTP: Hypertext Transfer Protocol
+    REST: Representational State Transfer
+    API: Application Programming Interface
 
 6. Do you play a musical instrument or sing? If so, how much experience do you have?
-
+Yes, I play violin and guitar. I've played violin for 12 years and guitar for 6 years. 
 7. Can you read music notation? If so, how well?
-
+Yes, I can read sheet music decently well.
 8. How large is your personal music collection? Estimate the number of artists, albums, and songs. If instead you listen to music using streaming services, how many playlists, artists, albums, and songs do you have in your account?
-
+I collect CD's and I've got around 60 albums in my apartment. I use Spotify to stream music and my main library has 5000 songs and I'm following over 100 artists.
 9. How do you search and find new music?
-
+I like following other people's playlists or listening to the reccomended playlists made by Spotify to find new music.
 11. Are you aware of any ways in which artists are dealing with public performances post-COVID? Do you think live performances are essential to your musical experience?
-
+I believe concerts are starting up again, with less tickets and masks right now. I do think live performances are important for an artist to connect more personally with their fans, and there's nothing that can replicate seeing a concert live in my opinion.
 12. Name two musical artists that you like. What do you find interesting about their music that makes you like them?
+I like Kendrick Lamar. His lyrics have a lot of meaning and his songs are really thought out. I like the Cocteau Twins. I enjoy their dreamy and "vibey" sound. 
