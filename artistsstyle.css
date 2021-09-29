@@ -1,0 +1,30 @@
+html, body, .row {margin:0; padding:0px;box-sizing:border-box;height:100%}
+* {box-sizing: border-box;}
+  .column {
+    float: left;
+    text-align: center;
+    height:100vh;
+    width: 33.333333%;
+    padding-left: 10px;
+    padding-right: 10px;}
+  
+  img {width:100%;}
+
+    h2 {font-size: 50px;text-align:center}
+    a {text-decoration:none;}
+    a:link{color:black}
+    a:visited{color:white}
+
+
+#column1 {background-color: rgb(42, 206, 189);}
+#column2 {background-color: salmon}
+#column3 {background-color: rgb(97, 38, 233)}
+h1 {text-align:center;background-color:black;color:white;margin:0px;padding:10px;font-size: 64px;}
+#biography {background-color: rgb(42, 206, 189);}
+#bio {padding:20px;text-align:center}
+#bioimage {width:500px}
+em {font-weight: bold;font-style:normal}
+st {font-style: italic}
+#discography {background-color: salmon;text-align: center;}
+#music {background-color: rgb(97, 38, 233);text-align: center;font-size: 30px;}
+#disc {width:500px;text-align:center;padding:40px;font-size: 20px;}
