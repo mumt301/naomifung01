@@ -1,16 +1,16 @@
-html, body, .row {margin:0; padding:0px;box-sizing:border-box;height:100%}
+html, body, .row {margin:0; padding:0px;box-sizing:border-box;height:100%;background-color: black;}
 * {box-sizing: border-box;}
   .column {
     float: left;
     text-align: center;
     height:100vh;
-    width: 33.333333%;
+    width: 33.333333vw;
     padding-left: 10px;
     padding-right: 10px;}
   
   img {width:100%;}
 
-    h2 {font-size: 50px;text-align:center}
+    h2 {font-size: 4vw;text-align:center}
     a {text-decoration:none;}
     a:link{color:black}
     a:visited{color:white}
