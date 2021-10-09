@@ -1,0 +1,376 @@
+<html>
+  <head>
+    <title>Assignment4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body onLoad="displayTable();">
+      <h1 style="text-align:center">Comparison of Audio Compression Methods</h1>
+      <br>
+        <div id="table" class="container"></div>
+                
+        <script>
+          let comparison_table = [{
+            'filename': '<b>FILENAME</b>',
+            'compression algorithm': '<b>COMPRESSION ALGORITHM</b>',
+            'bit-rate':"<b>BIT-RATE</b>",
+            'original size':'<b>ORIGINAL SIZE</b>',
+            'compressed size':'<b>COMPRESSED SIZE</b>',
+            'compression ratio':'<b>COMPRESSION RATIO</b>',
+            'link to orginal audio':'<b>LINK TO ORIGINAL AUDIO</b>',
+            'link to compressed audio':'<b>LINK TO COMPRESSED AUDIO</b>',
+            'link to residual audio':'<b>LINK TO RESIDUAL AUDIO</b>'
+          },
+          {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "81 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'1.2 MB',
+            'compression ratio':'0.13',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro mp3/electro sample original audio low.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="electro mp3 residual/electro sample original audio low residual.wav">residual audio</a>'
+          },
+          {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "99 kbs",
+            'original size':'9.9 MB',
+            'compressed size':'1.4KB',
+            'compression ratio':'0.14',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro mp3/electro sample original audio medium.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="electro mp3 residual/electro sample original audio medium residual.wav">residual audio</a>'
+          },
+          {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "135 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'1.9 MB',
+            'compression ratio':'0.19',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro mp3/electro sample original audio high.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="electro mp3 residual/electro sample original audio high residual.wav">residual audio</a>'
+          },
+          {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "320 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'4.5 MB',
+            'compression ratio':'0.45',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro mp3/electro sample original audio highest.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="electro mp3 residual/electro sample original audio highest residual.wav">residual audio</a>'
+          },    
+          {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "53 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'1.1 MB',
+            'compression ratio':'0.08',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar mp3/guitar low.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="guitar mp3 residual/guitar mp3 low residual.wav">residual audio</a>'
+          },
+          {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "64 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'1.3 MB',
+            'compression ratio':'0.10',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar mp3/guitar medium.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="guitar mp3 residual/guitar mp3 medium residual.wav">residual audio</a>'
+          },
+          {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "93 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'1.8 MB',
+            'compression ratio':'0.13',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar mp3/guitar high.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="guitar mp3 residual/guitar mp3 high residual.wav">residual audio</a>'
+          }, 
+          {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'MP3',
+            'bit-rate': "320 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'6.2 MB',
+            'compression ratio':'0.46',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar mp3/guitar highest.mp3">compressed audio</a>',
+            'link to residual audio':'<a href="guitar mp3 residual/guitar mp3 highest residual.wav">residual audio</a>'
+          },   {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "1",
+            'original size':'9.9 MB',
+            'compressed size':'747 KB',
+            'compression ratio':'0.08',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ogg/electro ogg low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ogg residual/electro ogg low residual.wav">residual audio</a>'
+          }, {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "4",
+            'original size':'9.9 MB',
+            'compressed size':'986 KB',
+            'compression ratio':'0.10',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ogg/electro ogg medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ogg residual/electro ogg medium residual.wav">residual audio</a>'
+          }, {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "8",
+            'original size':'9.9 MB',
+            'compressed size':'1.7 MB',
+            'compression ratio':'0.17',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ogg/electro ogg high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ogg residual/electro ogg high residual.wav">residual audio</a>'
+          }, {
+            'filename': 'Electro Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "10",
+            'original size':'9.9 MB',
+            'compressed size':'2.7 MB',
+            'compression ratio':'0.27',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ogg/electro ogg highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ogg residual/electro ogg highest residual.wav">residual audio</a>'
+          }, {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "1",
+            'original size':'13.5 MB',
+            'compressed size':'725 KB',
+            'compression ratio':'0.05',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ogg/guitar ogg low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ogg residual/guitar ogg low residual.wav">residual audio</a>'
+            
+          }, {
+            'filename': 'Guitar Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "4",
+            'original size':'13.5 MB',
+            'compressed size':'932 MB',
+            'compression ratio':'0.07',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ogg/guitar ogg medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ogg residual/guitar ogg medium residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "8",
+            'original size':'13.5 MB',
+            'compressed size':'1.8 MB',
+            'compression ratio':'0.13',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ogg/guitar ogg high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ogg residual/guitar ogg high residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'OGG',
+            'bit-rate': "10",
+            'original size':'13.5 MB',
+            'compressed size':'3.5 MB',
+            'compression ratio':'0.26',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ogg/guitar ogg highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ogg residual/guitar ogg highest residual.wav">residual audio</a>'
+            }, {
+              'filename': 'Electro Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "98 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'2.6 MB',
+            'compression ratio':'0.26',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro m4a/electro m4a low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro m4a residual/electro m4a low residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "182 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'2.5 MB',
+            'compression ratio':'0.25',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro m4a/electro m4a medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro m4a residual/electro m4a medium residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "272 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'2.4 MB',
+            'compression ratio':'0.24',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro m4a/electro m4a high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro m4a residual/electro m4a high residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "320 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'2.6 MB',
+            'compression ratio':'0.26',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro m4a/electro m4a highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro m4a residual/electro m4a highest residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "98 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'3 MB',
+            'compression ratio':'0.22',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar m4a/guitar m4a low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar m4a residual/guitar m4a low residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "182 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'3.2 MB',
+            'compression ratio':'0.24',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar m4a/guitar m4a medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar m4a residual/guitar m4a medium residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "272 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'3.1 MB',
+            'compression ratio':'0.23',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar m4a/guitar m4a high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar m4a residual/guitar m4a high residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'M4A',
+            'bit-rate': "320 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'3.2 MB',
+            'compression ratio':'0.24',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar m4a/guitar m4a highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar m4a residual/guitar m4a highest residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "32 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'448 KB',
+            'compression ratio':'0.05',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ac3/electro ac3 low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ac3 residual/electro ac3 low residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "128 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'1.8 MB',
+            'compression ratio':'0.18',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ac3/electro ac3 medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ac3 residual/electro ac3 medium residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "384 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'5.4 MB',
+            'compression ratio':'0.55',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ac3/electro ac3 high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ac3 residual/electro ac3 high residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Electro Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "640 kbps",
+            'original size':'9.9 MB',
+            'compressed size':'9 MB',
+            'compression ratio':'0.91',
+            'link to orginal audio':'<a href="electro sample original audio.wav">original audio</a>',
+            'link to compressed audio':'<a href="electro ac3/electro ac3 highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="electro ac3 residual/electro ac3 highest residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "32 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'611 KB',
+            'compression ratio':'0.05',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ac3/guitar ac3 low.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ac3 residual/guitar ac3 low residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "128 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'2.4 MB',
+            'compression ratio':'0.18',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ac3/guitar ac3 medium.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ac3 residual/guitar ac3 medium residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "384 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'7.3 MB',
+            'compression ratio':'0.54',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ac3/guitar ac3 high.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ac3 residual/guitar ac3 high residual.wav">residual audio</a>'
+            }, {
+                'filename': 'Guitar Sample',
+            'compression algorithm': 'AC3',
+            'bit-rate': "640 kbps",
+            'original size':'13.5 MB',
+            'compressed size':'12.2 MB',
+            'compression ratio':'0.90',
+            'link to orginal audio':'<a href="guitar original.wav">original audio</a>',
+            'link to compressed audio':'<a href="guitar ac3/guitar ac3 highest.wav">compressed audio</a>',
+            'link to residual audio':'<a href="guitar ac3 residual/guitar ac3 highest residual.wav">residual audio</a>'
+            }
+        
+        
+        ]
+      
+          function displayTable() {
+            let table = document.createElement('table');
+            table.id = "beatles_table"
+            for (row = 0; row < comparison_table.length; row++) {
+              tr = document.createElement('tr');
+              let columns = Object.keys(comparison_table[row]);
+              for (col = 0; col < columns.length; col++) {
+                td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerHTML = comparison_table[row][columns[col]];
+              }
+              table.appendChild(tr);
+            }
+            document.getElementById("table").appendChild(table);
+          }
+        </script>
+
+<p>Go back to my <a href="index.html">homepage</a></p>
+      </body>
+</html>
