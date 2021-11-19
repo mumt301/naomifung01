@@ -57,8 +57,11 @@
                 let artistData = retrievedData.getElementsByTagName("artist")[0];
                 let artistName = artistData.getElementsByTagName('name')[0].innerHTML; 
                 let artistMBID = artistData.id;
+                let artistSpec = "release-group?artist=";
+                let artistAlbum = "&type=album|ep";
+                let newQuery = artistSpec+artistMBID+artistAlbum;
 
-                httpGET("release-group?artist="+artistMBID+"&type=album|ep", getDisc);}
+                httpGET(newQuery, getDisc);}
 
                 function getDisc(xhttp) {
                     let retrievedData=xhttp.responseXML;
